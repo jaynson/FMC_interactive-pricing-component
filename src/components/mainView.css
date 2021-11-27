@@ -1,0 +1,3 @@
+.range__slider::-webkit-slider-thumb {
+    background:hsl(174, 86%, 45%) url(../images/icon-slider.svg) center center no-repeat;
+  }

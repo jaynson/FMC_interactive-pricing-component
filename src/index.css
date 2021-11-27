@@ -22,13 +22,204 @@ body {
     font-weight: 700; }
   body .fw-800 {
     font-weight: 800; }
+  body .btn-trial {
+    color: #bdccff; }
+    @media (hover: hover) {
+      body .btn-trial:hover {
+        color: white; } }
+  body .introduction {
+    text-align: center; }
+    body .introduction__title {
+      color: black;
+      font-size: 2.8rem; }
+  body .discount-text {
+    color: #ff8c66;
+    font-size: 1.2rem; }
+  body .main-display__pageviews {
+    font-size: 1.5rem;
+    letter-spacing: 0.3rem;
+    text-transform: uppercase; }
+  body .main-display__pricing--fig {
+    color: #293356;
+    font-size: 3.5rem; }
+
+.btn {
+  background-color: #293356;
+  border: none;
+  cursor: pointer; }
+
+.btn-rounded {
+  border-radius: 5rem; }
+
+.btn-trial {
+  width: 17rem;
+  height: 4rem; }
+
+.footer-features__list {
+  list-style: none; }
+
+.footer-features__item {
+  display: flex;
+  align-items: center;
+  gap: 1rem; }
+
+.main__billing {
+  display: flex;
+  justify-content: center;
+  flex-basis: 100%;
+  align-items: center; }
+
+.discount-text {
+  display: inline-block;
+  background-color: #feece7;
+  padding: 0.1rem 0.5rem;
+  margin-left: 1.2rem; }
+
+.main-billing__toggle-container {
+  margin: 0 1.5rem;
+  position: relative; }
+
+.main-billing__label-text {
+  position: absolute;
+  white-space: nowrap; }
+  .main-billing__label-text.monthly {
+    top: 0;
+    left: -12rem; }
+  .main-billing__label-text.yearly {
+    top: 0;
+    right: -20.4rem; }
+
+.main-display {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem; }
+
+.main-display__pricing {
+  display: flex;
+  align-items: center;
+  gap: 1rem; }
+
+.main-slider {
+  margin-bottom: 3rem; }
+
+.range__slider {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 100%;
+  height: 1rem;
+  background-color: #eaeefb;
+  border-radius: 2rem;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: 0.2s;
+  /* 0.2 seconds transition on hover */
+  transition: opacity 0.2s; }
+  .range__slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    cursor: pointer; }
+  @media (hover: hover) {
+    .range__slider:hover {
+      opacity: 1; } }
+
+.section {
+  padding: 3.6rem 5rem; }
+
+.main-billing__switch {
+  position: relative;
+  display: inline-block;
+  width: 4.4rem;
+  height: 2.6rem; }
+  .main-billing__switch input {
+    opacity: 0;
+    width: 0;
+    height: 0; }
+  .main-billing__switch input:checked + .main-billing__slider:before {
+    -webkit-transform: translateX(1.8rem);
+    -ms-transform: translateX(1.8rem);
+    transform: translateX(1.8rem); }
+
+.main-billing__label-text {
+  cursor: pointer; }
+
+.main-billing__slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #cdd7ee;
+  -webkit-transition: 0.4s;
+  transition: 0.4s; }
+  @media (hover: hover) {
+    .main-billing__slider:hover {
+      background-color: #10d5c2; } }
+  .main-billing__slider::before {
+    position: absolute;
+    content: '';
+    height: 1.8rem;
+    width: 1.8rem;
+    left: 0.4rem;
+    bottom: 0.4rem;
+    background-color: white;
+    -webkit-transition: 0.4s;
+    transition: 0.4s; }
+  .main-billing__slider.round {
+    border-radius: 34px; }
+  .main-billing__slider.round:before {
+    border-radius: 50%; }
 
 .container {
   padding: 5vh 0; }
 
 .app-component {
+  background-color: #fafbff;
+  background-repeat: no-repeat;
+  background-attachment: local;
+  box-shadow: 0 1rem 2rem 0 rgba(0, 0, 0, 0.35);
   max-width: 144rem;
-  margin: 0rem auto; }
+  margin: 0rem auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center; }
   @media only screen and (max-width: 37.5em) {
     .app-component {
       max-width: 55rem; } }
+
+.introduction {
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: local;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 4.5rem 0 2.5rem;
+  padding: 7rem 0; }
+  .introduction__title {
+    margin-bottom: 1rem; }
+
+.pricing-component {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  max-width: 54.5rem;
+  width: 100%;
+  margin-bottom: 13.5rem;
+  box-shadow: 0 0.1rem 1rem 0 rgba(0, 0, 0, 0.1);
+  border-radius: 1rem; }
+
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch; }
+
+.footer {
+  border-top: 0.15rem solid rgba(0, 0, 0, 0.05);
+  display: flex;
+  justify-content: space-between;
+  align-items: center; }

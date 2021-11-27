@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
+import './mainView.css';
 
 const MainView = () => {
 
@@ -7,6 +8,7 @@ const MainView = () => {
     const [rangeValue, setRangeValue] = useState('3');
     const [checked, setChecked] = useState(false);
     const sliderRef = useRef(null);
+    const toggleRef = useRef(null);
 
     const pricingModel = {
         1: ['10K', 8],
@@ -24,6 +26,23 @@ const MainView = () => {
         5: 36 * 0.75
     };
 
+    const handleBillingClicked = (e) => {
+        const target = e.target;
+        if (target.closest('.main-billing__label-text')) {
+
+            if (target.closest('.monthly')) {
+                console.log('monthly');
+                toggleRef.current.checked = true;
+                setChecked(() => true);
+            }
+            if (target.closest('.yearly')) {
+                console.log('yearly');
+                toggleRef.current.checked = false;
+                setChecked(() => false);
+            }
+        }
+    };
+
     const handleInput = (e) => {
         setRangeValue(e.target.value);
         setPageViews(pricingModel[sliderRef.current.value][0]);
@@ -31,7 +50,7 @@ const MainView = () => {
     };
 
     const handleCheckChanged = (e) => {
-        setChecked(!checked);
+        setChecked(() => !checked);
     };
 
     const pricingFunc = () => {
@@ -45,7 +64,8 @@ const MainView = () => {
 
 
     useEffect(() => {
-        setPageViews(pricingModel[sliderRef.current.value][0]);
+        toggleRef.current.checked = false;
+        setPageViews(pricingModel[sliderRef.current.value][0]);;
         pricingFunc();
 
     }, []);
@@ -53,15 +73,14 @@ const MainView = () => {
 
     useEffect(() => {
         pricingFunc();
-
     }, [checked]);
 
     return (
-        <section className='main'>
+        <section className='main section'>
             <div className='main-display'>
                 <p className='main-display__pageviews fw-800'>{ `${pageViews} pageviews` }</p>
                 <p className='main-display__pricing'>
-                    <span className='main-display__pricing--fig fw-800'>{ `$${pricing}` }</span>
+                    <span className='main-display__pricing--fig fw-800'>{ `$${pricing.toFixed(2)}` }</span>
                     <span className='main-display__pricing--unit fw-600'>/ month</span>
                 </p>
             </div>
@@ -73,23 +92,24 @@ const MainView = () => {
                     value={ rangeValue }
                     step='1' ref={ sliderRef }
                     id='pageview__slider'
+                    className='range__slider'
                     onInput={ handleInput }
 
                 />
             </div>
-            <footer className='main__footer'>
-                <label className='main-billing__label-text' htmlFor='billing__checkbox fw-600'>Monthly Billing</label>
+            <div className='main__billing' onClick={ handleBillingClicked }>
                 <div className='main-billing__toggle-container'>
+                    <label className='main-billing__label-text monthly fw-600' htmlFor='billing__checkbox'>Monthly Billing</label>
                     <label className='main-billing__switch' htmlFor='billing__checkbox'>
-                        <input type='checkbox' id='billing__checkbox' onChange={ handleCheckChanged } />
+                        <input type='checkbox' id='billing__checkbox' onChange={ handleCheckChanged } ref={ toggleRef } />
                         <span className='main-billing__slider round'></span>
                     </label>
+                    <label className='main-billing__label-text yearly' htmlFor='billing__checkbox'>
+                        <span className='yearly-text fw-600'>Yearly Billing</span>
+                        <span className='discount-text btn-rounded fw-600'>25% discount</span>
+                    </label>
                 </div>
-                <label className='main-billing__label-text' htmlFor='billing__checkbox'>
-                    <span className='yearly-text fw-600'>Yearly Billing</span>
-                </label>
-                <span className='discount-text btn-rounded fw-600'>25% discount</span>
-            </footer>
+            </div>
         </section>
     );
 };

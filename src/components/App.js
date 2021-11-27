@@ -1,6 +1,8 @@
 import React from 'react';
+import './app.css';
 import IntroductionView from './IntroductionView';
 import PricingComponent from './PricingComponent';
+
 
 const App = () => {
 

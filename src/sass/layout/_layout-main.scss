@@ -8,23 +8,68 @@
 
 // Component
 .app-component {
+  background-color: $color-neutral-very-pale-blue-main-bg;
+  background-repeat: no-repeat;
+  background-attachment: local;
+  box-shadow: 0 1rem 2rem 0 rgba(black, 0.35);
   max-width: $main-component-max-width-desktop;
   @include margin-centralize;
-
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   @include respond(600) {
     max-width: $main-component-max-width-mobile-600px;
   }
 }
 
 ///////////////////////////////////////////////////////////
-////        HEADER
+////        INTRODUCTION
+.introduction {
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: local;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 4.5rem 0 2.5rem;
+  padding: 7rem 0;
+
+  // TITLE
+  &__title {
+    margin-bottom: 1rem;
+  }
+}
 
 ///////////////////////////////////////////////////////////
-////        MAIN
+////        PRICING COMPONENT
+.pricing-component {
+  background-color: $color-neutral-white-pricing-component-bg;
+  display: flex;
+  flex-direction: column;
+  max-width: 54.5rem;
+  width: 100%;
+  margin-bottom: 13.5rem;
+  box-shadow: 0 0.1rem 1rem 0 rgba(black, 0.1);
+  border-radius: 1rem;
+}
 
 ///////////////////////////////////////////////////////////
-////        MAIN - Product
+////        PRICING COMPONENT - MAIN SECTION
 
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+///////////////////////////////////////////////////////////
+////        PRICING COMPONENT - FOOTER SECTION
+.footer {
+  border-top: 0.15rem solid rgba(black, 0.05);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 ///////////////////////////////////////////////////////////
 ////        MAIN - PROJECT SUMMARY
 

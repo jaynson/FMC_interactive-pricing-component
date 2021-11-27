@@ -1,4 +1,5 @@
 import React from 'react';
+import './introductoryView.css';
 
 const IntroductionView = () => {
     return (
