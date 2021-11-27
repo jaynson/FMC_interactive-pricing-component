@@ -1,0 +1,54 @@
+@function get-width-top($view-width) {
+  $ratio: 92.5rem / $main-component-max-width-desktop;
+  $new-width: $ratio * ($view-width / 10);
+  @return $new-width * 1rem;
+}
+@function get-width-bottom($view-width) {
+  $ratio: 97.4rem / $main-component-max-width-desktop;
+  $new-width: $ratio * ($view-width / 10);
+  @return $new-width * 1rem;
+}
+@function get-width-top-mobile($view-width) {
+  $ratio: 40.6rem / $main-component-max-width-desktop;
+  $new-width: $ratio * ($view-width / 10);
+  @return $new-width * 1rem;
+}
+@function get-width-bottom-mobile($view-width) {
+  $ratio: 49.8rem / $main-component-max-width-desktop;
+  $new-width: $ratio * ($view-width / 10);
+  @return $new-width * 1rem;
+}
+@function get-width-phone($section-height) {
+  $ratio: 48rem / 40rem;
+  $new-width: $ratio * ($section-height);
+  @return $new-width * 1rem;
+}
+
+@function get-height-top($view-width) {
+  $calculated-width: get-width-top($view-width);
+  $new-height: $calculated-width / $pic-aspect-ratio-top;
+  @return $new-height;
+}
+
+@function get-height-bottom($view-width) {
+  $calculated-width: get-width-bottom($view-width);
+  $new-height: $calculated-width / $pic-aspect-ratio-bottom;
+  @return $new-height;
+}
+@function get-height-top-mobile($view-width) {
+  $calculated-width: get-width-top-mobile($view-width);
+  $new-height: $calculated-width / $pic-aspect-ratio-top-mobile;
+  @return $new-height;
+}
+
+@function get-height-bottom-mobile($view-width) {
+  $calculated-width: get-width-bottom-mobile($view-width);
+  $new-height: $calculated-width / $pic-aspect-ratio-bottom-mobile;
+  @return $new-height;
+}
+
+@function get-height-phone($section-height) {
+  $calculated-width: get-width-phone($section-height);
+  $new-height: $calculated-width / 0.82902;
+  @return $new-height;
+}

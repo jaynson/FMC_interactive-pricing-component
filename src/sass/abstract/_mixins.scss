@@ -1,0 +1,62 @@
+@mixin margin-centralize($vert: 0) {
+  margin: ($vert * 1rem) auto;
+}
+
+@mixin transform-centralize-both {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@mixin transform-centralize-X {
+  left: 50%;
+  transform: translateX(-50%);
+}
+@mixin transform-centralize-Y($vert: 50) {
+  position: absolute;
+  top: $vert * 1%;
+  transform: translateY(-50%);
+}
+
+@mixin clearfix {
+  &::after {
+    content: '';
+    display: table;
+    clear: both;
+  }
+}
+
+@mixin respond($bp-width) {
+  @media only screen and (max-width: (($bp-width * 1em) / 16)) {
+    @content;
+  }
+}
+
+@mixin hover {
+  @media (hover: hover) {
+    @content;
+  }
+}
+
+@mixin hidden {
+  &.hidden {
+    display: none;
+  }
+}
+
+@mixin style-font-size($element, $font-size) {
+  &__#{$element} {
+    font-size: $font-size * 1rem;
+  }
+}
+
+@mixin set-size-img($view-width) {
+  width: get-width($view-width) * 1rem;
+  height: get-height-desktop($view-width) * 1rem;
+}
+
+@mixin set-size-info($view-width) {
+  height: get-height-desktop($view-width) * 1rem;
+  max-width: calc((100% - #{get-width($view-width) * 1rem}) - 3rem);
+}

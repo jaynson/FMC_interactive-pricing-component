@@ -1,0 +1,47 @@
+$default-text-size: 62.5%;
+
+// Color Variables
+
+$color-primary-soft-cyan-full-slider-bar: hsl(174, 77%, 80%);
+$color-primary-strong-cyan-slider-bg: hsl(174, 86%, 45%);
+$color-primary-light-grayish-red-discount-bg: hsl(14, 92%, 95%);
+$color-primary-light-red-discount-text: hsl(15, 100%, 70%);
+$color-primary-pale-blue: hsl(226, 100%, 87%);
+
+$color-neutral-white-pricing-component-bg: hsl(0, 0%, 100%);
+$color-neutral-very-pale-blue-main-bg: hsl(230, 100%, 99%);
+$color-neutral-light-grayish-blue-empty-slider-bg: hsl(224, 65%, 95%);
+$color-neutral-light-grayish-blue-toggle-bg: hsl(223, 50%, 87%);
+$color-neutral-grayish-blue-text: hsl(225, 20%, 60%);
+$color-neutral-dark-saturated-blue-text_cta-bg: hsl(227, 35%, 25%);
+
+//Background container Variables-Desktop
+$main-component-max-width-desktop: 144rem;
+$main-component-max-height-desktop: 102.4rem;
+
+//Background container Variables-Mobile
+$main-component-max-width-mobile-600px: 55rem;
+$main-component-max-width-mobile-375px: 37.5rem;
+$main-component-max-width-mobile-285px: 28.5rem;
+
+//Content Variables
+$content-max-width-desktop: 92rem;
+$content-max-width-mobile: 40rem;
+
+$header-height-desktop: 80rem;
+$header-height-mobile: 60rem;
+
+$left-padding: 16.6rem;
+$right-padding: 16rem;
+
+//Card Variables Desktop
+$card-max-width-desktop: 63.7rem;
+
+//Card Variables Responsive
+$card-max-width-responsive-612px: 40rem;
+
+$pic-aspect-ratio-top: 92.5rem / 88.2rem;
+$pic-aspect-ratio-bottom: 97.4rem / 78.6rem;
+
+$pic-aspect-ratio-top-mobile: 40.6rem / 33.1rem;
+$pic-aspect-ratio-bottom-mobile: 49.8rem / 35.9rem;
