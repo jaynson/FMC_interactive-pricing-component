@@ -36,12 +36,22 @@
   &-features {
     &__list {
       list-style: none;
+      @include respond(500) {
+        display: flex;
+        gap: 1rem;
+        flex-direction: column;
+        align-items: center;
+      }
     }
 
     &__item {
       display: flex;
       align-items: center;
       gap: 1rem;
+    }
+
+    @include respond(500) {
+      margin-bottom: 3rem;
     }
   }
 }
@@ -67,42 +77,57 @@
   flex-basis: 100%;
   //   justify-content: space-between;
   align-items: center;
+  @include respond(500) {
+    order: 4;
+  }
 }
 
 .discount-text {
   display: inline-block;
   background-color: $color-primary-light-grayish-red-discount-bg;
   padding: 0.1rem 0.5rem;
-  margin-left: 1.2rem;
+  margin-left: 0.8rem;
+
+  @include respond(325) {
+    position: absolute;
+    top: 2.1rem;
+    left: -1rem;
+  }
 }
 
 .main-billing__toggle-container {
   //   justify-self: center;
   margin: 0 1.5rem;
   position: relative;
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+  left: 3.6rem;
+
+  @include respond(537) {
+    left: 1.7rem;
+  }
+  @include respond(325) {
+    left: -0.4rem;
+  }
 }
 
 .main-billing__label-text {
-  position: absolute;
+  position: relative;
   white-space: nowrap;
-
-  &.monthly {
-    top: 0;
-    left: -12rem;
-  }
-  &.yearly {
-    top: 0;
-    right: -20.4rem;
-  }
+  display: flex;
+  align-items: center;
 }
 
 ///////////////////////////////////////////////////////////
 ////       MAIN SECTION (DISPLAY)
-.main-display {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 2rem;
+
+// PAGE VIEWS
+.main-display__pageviews {
+  margin-right: auto;
+  @include respond(500) {
+    margin-right: 0;
+  }
 }
 
 //PRICING
@@ -110,7 +135,10 @@
   display: flex;
   align-items: center;
   gap: 1rem;
-  &--fig {
+
+  @include respond(500) {
+    order: 3;
+    margin-bottom: 3rem;
   }
 }
 
@@ -119,7 +147,9 @@
 ///////////////////////////////////////////////////////////
 ////       MAIN SECTION (SLIDER)
 .main-slider {
-  margin-bottom: 3rem;
+  margin: 4rem 0 3rem;
+  flex-basis: 100%;
+  width: 100%;
 }
 
 .range__slider {
@@ -130,9 +160,14 @@
   background-color: $color-neutral-light-grayish-blue-empty-slider-bg;
   border-radius: 2rem;
   outline: none;
+  cursor: pointer;
   opacity: 0.7;
   -webkit-transition: 0.2s; /* 0.2 seconds transition on hover */
   transition: opacity 0.2s;
+
+  &.mouse-down {
+    cursor: help;
+  }
 
   &::-webkit-slider-thumb {
     -webkit-appearance: none;
@@ -140,10 +175,13 @@
     width: 3rem;
     height: 3rem;
     border-radius: 50%;
-    cursor: pointer;
+    cursor: grab;
     // color: $color-primary-light-red-discount-text;
     // box-shadow: -20rem 0 0 20rem $color-primary-soft-cyan-full-slider-bar;
     // margin-top: -1rem;
+    &:active {
+      cursor: grabbing;
+    }
   }
 
   //   &::-webkit-slider-runnable-track {
@@ -178,6 +216,13 @@
 ////      SECTION (MAIN and FOOTER
 .section {
   padding: 3.6rem 5rem;
+
+  @include respond(600) {
+    padding: 3.6rem 3rem;
+  }
+  @include respond(350) {
+    padding: 3.6rem 1.5rem;
+  }
 }
 ///////////////////////////////////////////////////////////
 ////        TOGGLE SWITCH
@@ -186,6 +231,7 @@
   display: inline-block;
   width: 4.4rem;
   height: 2.6rem;
+  justify-self: center;
 
   input {
     opacity: 0;

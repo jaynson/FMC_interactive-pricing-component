@@ -4,6 +4,9 @@
 // container
 .container {
   padding: 5vh 0;
+  @include respond(1440) {
+    padding: 0;
+  }
 }
 
 // Component
@@ -18,7 +21,7 @@
   flex-direction: column;
   align-items: center;
   @include respond(600) {
-    max-width: $main-component-max-width-mobile-600px;
+    // max-width: $main-component-max-width-mobile-600px;
   }
 }
 
@@ -38,6 +41,12 @@
   &__title {
     margin-bottom: 1rem;
   }
+
+  &__summary {
+    @include respond(400) {
+      padding: 0 1rem;
+    }
+  }
 }
 
 ///////////////////////////////////////////////////////////
@@ -51,6 +60,10 @@
   margin-bottom: 13.5rem;
   box-shadow: 0 0.1rem 1rem 0 rgba(black, 0.1);
   border-radius: 1rem;
+
+  @include respond(600) {
+    max-width: 90%;
+  }
 }
 
 ///////////////////////////////////////////////////////////
@@ -58,8 +71,12 @@
 
 .main {
   display: flex;
-  flex-direction: column;
-  align-items: stretch;
+  flex-wrap: wrap;
+  align-items: center;
+
+  @include respond(500) {
+    flex-direction: column;
+  }
 }
 
 ///////////////////////////////////////////////////////////
@@ -69,6 +86,10 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  @include respond(500) {
+    flex-direction: column;
+  }
 }
 ///////////////////////////////////////////////////////////
 ////        MAIN - PROJECT SUMMARY
