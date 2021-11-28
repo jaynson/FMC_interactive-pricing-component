@@ -1,12 +1,13 @@
 import React from 'react';
+import './introductoryView.css';
 
 const IntroductionView = () => {
     return (
         <div className='introduction'>
-            <h1 className='introduction__title'>
+            <h1 className='introduction__title fw-800'>
                 Simple, traffic-based pricing
             </h1>
-            <p className='introduction__summary'>
+            <p className='introduction__summary fw-600'>
                 Sign-up for out 30-day trial. No credit card required
             </p>
 

@@ -1,9 +1,12 @@
 import React from 'react';
+import FooterView from './FooterView';
+import MainView from './MainView';
 
 const PricingComponent = () => {
     return (
-        <div>
-
+        <div className='pricing-component'>
+            <MainView />
+            <FooterView />
         </div>
     );
 };

@@ -4,16 +4,20 @@
 ///////////////////////////////////////////////////////////
 ////        BUTTON
 
-// Back this Project Button
-
-// Bookmark Button
-
-// Complete Button
-
-// Continue Button
-
-//Select Reward Button
-
+.btn {
+  background-color: $color-neutral-dark-saturated-blue-text_cta-bg;
+  border: none;
+  cursor: pointer;
+}
+// BTN ROUNDED
+.btn-rounded {
+  border-radius: 5rem;
+}
+// START MY TRIAL BUTTON
+.btn-trial {
+  width: 17rem;
+  height: 4rem;
+}
 ///////////////////////////////////////////////////////////
 ////        CALL TO ACTION
 
@@ -28,7 +32,29 @@
 
 ///////////////////////////////////////////////////////////
 ////        FOOTER
+.footer {
+  &-features {
+    &__list {
+      list-style: none;
+      @include respond(500) {
+        display: flex;
+        gap: 1rem;
+        flex-direction: column;
+        align-items: center;
+      }
+    }
 
+    &__item {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    @include respond(500) {
+      margin-bottom: 3rem;
+    }
+  }
+}
 ///////////////////////////////////////////////////////////
 ////        HEADER
 
@@ -44,22 +70,224 @@
 ////        MENU NAV
 
 ///////////////////////////////////////////////////////////
-////       MAIN PLEDGE BOX
+////       MAIN SECTION (Billing)
+.main__billing {
+  display: flex;
+  justify-content: center;
+  flex-basis: 100%;
+  //   justify-content: space-between;
+  align-items: center;
+  @include respond(500) {
+    order: 4;
+  }
+}
+
+.discount-text {
+  display: inline-block;
+  background-color: $color-primary-light-grayish-red-discount-bg;
+  padding: 0.1rem 0.5rem;
+  margin-left: 0.8rem;
+
+  @include respond(325) {
+    position: absolute;
+    top: 2.1rem;
+    left: -1rem;
+  }
+}
+
+.main-billing__toggle-container {
+  //   justify-self: center;
+  margin: 0 1.5rem;
+  position: relative;
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+  left: 3.6rem;
+
+  @include respond(537) {
+    left: 1.7rem;
+  }
+  @include respond(325) {
+    left: -0.4rem;
+  }
+}
+
+.main-billing__label-text {
+  position: relative;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+}
 
 ///////////////////////////////////////////////////////////
-////          MODAL PLEDGE BOX
+////       MAIN SECTION (DISPLAY)
 
-////        Radio-Button
+// PAGE VIEWS
+.main-display__pageviews {
+  margin-right: auto;
+  @include respond(500) {
+    margin-right: 0;
+  }
+}
+
+//PRICING
+.main-display__pricing {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+
+  @include respond(500) {
+    order: 3;
+    margin-bottom: 3rem;
+  }
+}
 
 // LABEL
 
 ///////////////////////////////////////////////////////////
-////       PLEDGE BOX
+////       MAIN SECTION (SLIDER)
+.main-slider {
+  margin: 4rem 0 3rem;
+  flex-basis: 100%;
+  width: 100%;
+}
+
+.range__slider {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 100%;
+  height: 1rem;
+  background-color: $color-neutral-light-grayish-blue-empty-slider-bg;
+  border-radius: 2rem;
+  outline: none;
+  cursor: pointer;
+  opacity: 0.7;
+  -webkit-transition: 0.2s; /* 0.2 seconds transition on hover */
+  transition: opacity 0.2s;
+
+  &.mouse-down {
+    cursor: help;
+  }
+
+  &::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    cursor: grab;
+    // color: $color-primary-light-red-discount-text;
+    // box-shadow: -20rem 0 0 20rem $color-primary-soft-cyan-full-slider-bar;
+    // margin-top: -1rem;
+    &:active {
+      cursor: grabbing;
+    }
+  }
+
+  //   &::-webkit-slider-runnable-track {
+  //     -webkit-appearance: none;
+  //     appearance: none;
+  //     color: $color-primary-soft-cyan-full-slider-bar;
+  //     cursor: pointer;
+  //     height: 1rem;
+  //     // box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+  //     // background-color: $color-primary-soft-cyan-full-slider-bar;
+  //   }
+
+  @include hover {
+    &:hover {
+      opacity: 1;
+    }
+  }
+}
+
+// input[type='range']::-ms-thumb,
+// input[type='range']::-webkit-slider-thumb,
+// input[type='range']::-ms-thumb::-moz-range-thumb {
+//   -webkit-appearance: none;
+//   -moz-appearance: none;
+//   appearance: none;
+//   width: 5rem;
+//   height: 5rem;
+//   background-color: $color-primary-light-red-discount-text;
+// }
 
 ///////////////////////////////////////////////////////////
-////       MAIN PLEDGE BOX
+////      SECTION (MAIN and FOOTER
+.section {
+  padding: 3.6rem 5rem;
 
+  @include respond(600) {
+    padding: 3.6rem 3rem;
+  }
+  @include respond(350) {
+    padding: 3.6rem 1.5rem;
+  }
+}
 ///////////////////////////////////////////////////////////
-////        PROJECT FUND PROGRESS BAR
+////        TOGGLE SWITCH
+.main-billing__switch {
+  position: relative;
+  display: inline-block;
+  width: 4.4rem;
+  height: 2.6rem;
+  justify-self: center;
+
+  input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+
+  input:checked + .main-billing__slider:before {
+    -webkit-transform: translateX(1.8rem);
+    -ms-transform: translateX(1.8rem);
+    transform: translateX(1.8rem);
+  }
+}
+
+.main-billing__label-text {
+  cursor: pointer;
+}
+
+.main-billing__slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: $color-neutral-light-grayish-blue-toggle-bg;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+
+  @include hover {
+    &:hover {
+      background-color: $color-primary-strong-cyan-slider-bg;
+    }
+  }
+
+  //// BEFORE
+  &::before {
+    position: absolute;
+    content: '';
+    height: 1.8rem;
+    width: 1.8rem;
+    left: 0.4rem;
+    bottom: 0.4rem;
+    background-color: white;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+  }
+
+  ////// Rounded sliders
+  &.round {
+    border-radius: 34px;
+  }
+
+  &.round:before {
+    border-radius: 50%;
+  }
+}
 
 ///////////////////////////////////////////////////////////

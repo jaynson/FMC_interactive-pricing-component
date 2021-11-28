@@ -18,27 +18,66 @@ body {
   .fw-700 {
     font-weight: 700;
   }
-  .fw-700 {
+  .fw-800 {
     font-weight: 800;
   }
 
   ////BUTTON
+  .btn-trial {
+    color: $color-primary-pale-blue-cta-text;
+    @include hover {
+      &:hover {
+        color: $color-neutral-white-pricing-component-bg;
+      }
+    }
+  }
 
   ////CORE SERVICES
 
   ////FOOTER
+  .footer {
+    &-features__text {
+      //TODO
+    }
+  }
 
   ////FORM
 
   ////HEADER
 
-  ////MENU NAV
+  ////INTRODUCTION
+  .introduction {
+    text-align: center;
+    &__title {
+      color: black;
+      font-size: 2.8rem;
+    }
+  }
+  ////MAIN SECTION
 
-  ////MODAL
+  .discount-text {
+    color: $color-primary-light-red-discount-text;
+    font-size: 1rem;
+  }
 
-  ////MODAL COMPLETE
+  ////MAIN BILLING
+  .main-billing__label-text {
+    font-size: 1.3rem;
+  }
 
-  ////PLEDGES
+  ////PAGE VIEW DISPLAY
+  .main-display__pageviews {
+    font-size: 1.5rem;
+    letter-spacing: 0.3rem;
+    text-transform: uppercase;
+  }
+
+  .main-display__pricing {
+    &--fig {
+      color: $color-neutral-dark-saturated-blue-text_cta-bg;
+      font-size: 3.5rem;
+    }
+  }
 
   ////PLEDGE BOX
 
