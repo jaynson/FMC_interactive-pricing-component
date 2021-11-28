@@ -65,6 +65,7 @@ const MainView = () => {
 
 
     useEffect(() => {
+        setWindowWidth(window.innerWidth);
         window.addEventListener('resize', function () {
             setWindowWidth(window.innerWidth);
         });
